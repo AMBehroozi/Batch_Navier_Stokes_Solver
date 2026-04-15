@@ -15,15 +15,19 @@ This repository contains a PyTorch-based, GPU-accelerated implementation of a Ba
 
 The solver computes the 2D incompressible Navier-Stokes equations using the vorticity-stream function formulation. Given the vorticity field $\omega(x, y, t)$ and stream function $\psi(x, y, t)$, the equations are:
 
-1. **Poisson Equation for Stream Function:**
-   $$ \nabla^2 \psi = \omega $$
+**1. Poisson Equation for Stream Function:**
+$$
+\nabla^2 \psi = \omega
+$$
 
-2. **Vorticity Transport Equation:**
-   $$ \frac{\partial \omega}{\partial t} = \nu \nabla^2 \omega - \left( \frac{\partial \psi}{\partial y} \frac{\partial \omega}{\partial x} - \frac{\partial \psi}{\partial x} \frac{\partial \omega}{\partial y} \right) + F $$
+**2. Vorticity Transport Equation:**
+$$
+\frac{\partial \omega}{\partial t} = \nu \nabla^2 \omega - \left( \frac{\partial \psi}{\partial y} \frac{\partial \omega}{\partial x} - \frac{\partial \psi}{\partial x} \frac{\partial \omega}{\partial y} \right) + F
+$$
 
 Where:
 - $\nu$ is the kinematic viscosity.
-- $( \frac{\partial \psi}{\partial y} \frac{\partial \omega}{\partial x} - \frac{\partial \psi}{\partial x} \frac{\partial \omega}{\partial y} )$ represents the advection/Jacobian term.
+- $\left( \frac{\partial \psi}{\partial y} \frac{\partial \omega}{\partial x} - \frac{\partial \psi}{\partial x} \frac{\partial \omega}{\partial y} \right)$ represents the advection/Jacobian term.
 - $F$ is an applied external forcing term.
 
 
