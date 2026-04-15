@@ -16,14 +16,14 @@ This repository contains a PyTorch-based, GPU-accelerated implementation of a Ba
 The solver computes the 2D incompressible Navier-Stokes equations using the vorticity-stream function formulation. Given the vorticity field $\omega(x, y, t)$ and stream function $\psi(x, y, t)$, the equations are:
 
 **1. Poisson Equation for Stream Function:**
-$$
+```math
 \nabla^2 \psi = \omega
-$$
+```
 
 **2. Vorticity Transport Equation:**
-$$
+```math
 \frac{\partial \omega}{\partial t} = \nu \nabla^2 \omega - \left( \frac{\partial \psi}{\partial y} \frac{\partial \omega}{\partial x} - \frac{\partial \psi}{\partial x} \frac{\partial \omega}{\partial y} \right) + F
-$$
+```
 
 Where:
 - $\nu$ is the kinematic viscosity.
